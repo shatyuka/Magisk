@@ -72,11 +72,11 @@ val syncLibs by tasks.registering(Sync::class) {
     into("src/main/jniLibs")
     into("armeabi-v7a") {
         from(rootProject.file("native/out/armeabi-v7a")) {
-            include("busybox", "magiskboot", "magiskinit", "magisk")
+            include("magisk")
             rename { if (it == "magisk") "libmagisk32.so" else "lib$it.so" }
         }
         from(rootProject.file("native/out/arm64-v8a")) {
-            include("magisk")
+            include("busybox", "magiskboot", "magiskinit", "magisk")
             rename { if (it == "magisk") "libmagisk64.so" else "lib$it.so" }
         }
     }

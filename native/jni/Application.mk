@@ -11,9 +11,7 @@ APP_CFLAGS += -D__MDBG
 endif
 
 # Build 64 bit binaries
-ifdef B_64BIT
 APP_ABI += arm64-v8a x86_64
-endif
 
 # Busybox require some additional settings
 ifdef B_BB
